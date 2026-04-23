@@ -1,0 +1,35 @@
+{
+  "name": "liberte-business-academy",
+  "version": "1.0.0",
+  "description": "Plateforme e-learning pour formations business digitales",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server -p 8080",
+    "dev": "npx live-server --port=8080",
+    "build": "echo 'No build step required for static site'",
+    "deploy": "gh-pages -d ."
+  },
+  "keywords": [
+    "e-learning",
+    "business",
+    "formation",
+    "digital",
+    "entrepreneuriat"
+  ],
+  "author": {
+    "name": "Jean Paul Bognon",
+    "email": "jeanpaulbognon3@gmail.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VOTRE_USERNAME/liberte-business-academy.git"
+  },
+  "homepage": "https://VOTRE_USERNAME.github.io/liberte-business-academy",
+  "devDependencies": {
+    "gh-pages": "^6.1.0",
+    "http-server": "^14.1.1",
+    "live-server": "^1.2.2"
+  },
+  "dependencies": {}
+}
