@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LIBERTÉ BUSINESS ACADEMY - Formations en ligne pour entrepreneurs et créateurs de contenu. Apprenez à développer votre business digital.">
+    <meta name="keywords" content="formation business, entrepreneuriat, marketing digital, e-learning, business en ligne">
+    <meta name="author" content="Jean Paul Bognon">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="LIBERTÉ BUSINESS ACADEMY - Formations Business en Ligne">
+    <meta property="og:description" content="Développez votre business digital avec nos formations complètes">
+    <meta property="og:image" content="https://votre-site.com/images/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LIBERTÉ BUSINESS ACADEMY">
+    <meta name="twitter:description" content="Formations Business en Ligne">
+    
+    <title>LIBERTÉ BUSINESS ACADEMY - Formations Business en Ligne</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- ============================================ -->
+    <!-- HEADER / NAVIGATION -->
+    <!-- ============================================ -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">
+                <span class="logo-icon">🎓</span>
+                <span class="logo-text">LIBERTÉ BUSINESS</span>
+            </a>
+            
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#accueil" class="nav__link active">Accueil</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#formations" class="nav__link">Formations</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#avantages" class="nav__link">Avantages</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#temoignages" class="nav__link">Témoignages</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">Contact</a>
+                    </li>
+                </ul>
+                
+                <div class="nav__close" id="nav-close">
+                    <i class="close-icon">✕</i>
+                </div>
+            </div>
+            
+            <div class="nav__actions">
+                <a href="#formations" class="btn btn-primary">Commencer</a>
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="toggle-icon">☰</i>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- ============================================ -->
+    <!-- HERO SECTION -->
+    <!-- ============================================ -->
+    <section class="hero" id="accueil">
+        <div class="hero__container container">
+            <div class="hero__content">
+                <span class="hero__badge">🚀 Nouvelle formation disponible</span>
+                <h1 class="hero__title">
+                    Développez votre <span class="gradient-text">Business Digital</span> avec nos formations
+                </h1>
+                <p class="hero__description">
+                    Apprenez à créer, développer et monétiser votre activité en ligne avec des formations pratiques et complètes. Rejoignez des milliers d'entrepreneurs qui ont transformé leur vie.
+                </p>
+                <div class="hero__buttons">
+                    <a href="#formations" class="btn btn-primary btn-large">
+                        Découvrir les formations
+                        <span class="btn-icon">→</span>
+                    </a>
+                    <a href="#avantages" class="btn btn-secondary btn-large">
+                        En savoir plus
+                    </a>
+                </div>
+                <div class="hero__stats">
+                    <div class="stat">
+                        <h3 class="stat__number">5000+</h3>
+                        <p class="stat__label">Étudiants</p>
+                    </div>
+                    <div class="stat">
+                        <h3 class="stat__number">4.9/5</h3>
+                        <p class="stat__label">Note moyenne</p>
+                    </div>
+                    <div class="stat">
+                        <h3 class="stat__number">15+</h3>
+                        <p class="stat__label">Formations</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero__image">
+                <div class="hero__image-wrapper">
+                    <img src="images/hero-illustration.svg" alt="Formation en ligne" class="hero__img">
+                    <div class="floating-card card-1">
+                        <span class="card-icon">📊</span>
+                        <span class="card-text">+250% de croissance</span>
+                    </div>
+                    <div class="floating-card card-2">
+                        <span class="card-icon">💰</span>
+                        <span class="card-text">Revenus passifs</span>
+                    </div>
+                    <div class="floating-card card-3">
+                        <span class="card-icon">🎯</span>
+                        <span class="card-text">Objectifs atteints</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============================================ -->
+    <!-- FORMATIONS SECTION -->
+    <!-- ============================================ -->
+    <section class="formations section" id="formations">
+        <div class="container">
+            <div class="section__header">
+                <span class="section__badge">📚 Nos formations</span>
+                <h2 class="section__title">Choisissez votre formation</h2>
+                <p class="section__description">
+                    Des formations complètes et pratiques pour développer votre business en ligne
+                </p>
+            </div>
+            
+            <div class="formations__grid">
+                <!-- Formation 1 -->
+                <div class="formation-card" data-aos="fade-up">
+                    <div class="formation-card__badge">⭐ Bestseller</div>
+                    <div class="formation-card__icon">🎬</div>
+                    <h3 class="formation-card__title">Création de Contenu Vidéo</h3>
+                    <p class="formation-card__description">
+                        Maîtrisez la création de vidéos professionnelles pour YouTube, TikTok et Instagram. De la prise de vue au montage.
+                    </p>
+                    <ul class="formation-card__features">
+                        <li>✓ 50+ vidéos de formation</li>
+                        <li>✓ Projets pratiques</li>
+                        <li>✓ Support illimité</li>
+                        <li>✓ Certificat de fin</li>
+                    </ul>
+                    <div class="formation-card__footer">
+                        <div class="formation-card__price">
+                            <span class="price-old">299€</span>
+                            <span class="price-new">197€</span>
+                        </div>
+                        <a href="produits/formation-video.html" class="btn btn-primary">
+                            Commencer
+                            <span class="btn-icon">→</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Formation 2 -->
+                <div class="formation-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="formation-card__badge">🔥 Populaire</div>
+                    <div class="formation-card__icon">💼</div>
+                    <h3 class="formation-card__title">Business en Ligne</h3>
+                    <p class="formation-card__description">
+                        Créez et développez votre business en ligne de A à Z. Stratégies éprouvées pour générer des revenus.
+                    </p>
+                    <ul class="formation-card__features">
+                        <li>✓ 40+ modules complets</li>
+                        <li>✓ Templates inclus</li>
+                        <li>✓ Coaching de groupe</li>
+                        <li>✓ Accès à vie</li>
+                    </ul>
+                    <div class="formation-card__footer">
+                        <div class="formation-card__price">
+                            <span class="price-old">399€</span>
+                            <span class="price-new">247€</span>
+                        </div>
+                        <a href="produits/formation-business.html" class="btn btn-primary">
+                            Commencer
+                            <span class="btn-icon">→</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Formation 3 -->
+                <div class="formation-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="formation-card__badge">🚀 Nouveau</div>
+                    <div class="formation-card__icon">📱</div>
+                    <h3 class="formation-card__title">Marketing Digital</h3>
+                    <p class="formation-card__description">
+                        Maîtrisez les réseaux sociaux, la publicité en ligne et les stratégies de croissance digitale.
+                    </p>
+                    <ul class="formation-card__features">
+                        <li>✓ 35+ heures de contenu</li>
+                        <li>✓ Études de cas réels</li>
+                        <li>✓ Outils inclus</li>
+                        <li>✓ Mises à jour gratuites</li>
+                    </ul>
+                    <div class="formation-card__footer">
+                        <div class="formation-card__price">
+                            <span class="price-old">349€</span>
+                            <span class="price-new">197€</span>
+                        </div>
+                        <a href="produits/formation-marketing.html" class="btn btn-primary">
+                            Commencer
+                            <span class="btn-icon">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="formations__cta">
+                <a href="#contact" class="btn btn-secondary btn-large">
+                    Voir toutes les formations
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============================================ -->
+    <!-- AVANTAGES SECTION -->
+    <!-- ============================================ -->
+    <section class="avantages section" id="avantages">
+        <div class="container">
+            <div class="section__header">
+                <span class="section__badge">✨ Pourquoi nous choisir</span>
+                <h2 class="section__title">Des formations qui font la différence</h2>
+            </div>
+            
+            <div class="avantages__grid">
+                <div class="avantage-card" data-aos="fade-up">
+                    <div class="avantage-card__icon">🎯</div>
+                    <h3 class="avantage-card__title">Contenu Pratique</h3>
+                    <p class="avantage-card__description">
+                        Des formations axées sur la pratique avec des projets réels et des études de cas concrets.
+                    </p>
+                </div>
+                
+                <div class="avantage-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="avantage-card__icon">⏰</div>
+                    <h3 class="avantage-card__title">Accès à Vie</h3>
+                    <p class="avantage-card__description">
+                        Accédez à vos formations à vie, avec toutes les mises à jour futures incluses gratuitement.
+                    </p>
+                </div>
+                
+                <div class="avantage-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="avantage-card__icon">👥</div>
+                    <h3 class="avantage-card__title">Communauté Active</h3>
+                    <p class="avantage-card__description">
+                        Rejoignez une communauté d'entrepreneurs motivés et partagez vos expériences.
+                    </p>
+                </div>
+                
+                <div class="avantage-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="avantage-card__icon">💬</div>
+                    <h3 class="avantage-card__title">Support Dédié</h3>
+                    <p class="avantage-card__description">
+                        Bénéficiez d'un support par email et de sessions de coaching pour vos questions.
+                    </p>
+                </div>
+                
+                <div class="avantage-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="avantage-card__icon">📜</div>
+                    <h3 class="avantage-card__title">Certificats</h3>
+                    <p class="avantage-card__description">
+                        Obtenez un certificat de réussite à la fin de chaque formation pour valoriser vos compétences.
+                    </p>
+                </div>
+                
+                <div class="avantage-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="avantage-card__icon">💰</div>
+                    <h3 class="avantage-card__title">Garantie 30 Jours</h3>
+                    <p class="avantage-card__description">
+                        Satisfait ou 100% remboursé pendant 30 jours, sans question posée.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============================================ -->
+    <!-- TÉMOIGNAGES SECTION -->
+    <!-- ============================================ -->
+    <section class="temoignages section" id="temoignages">
+        <div class="container">
+            <div class="section__header">
+                <span class="section__badge">⭐ Témoignages</span>
+                <h2 class="section__title">Ce que disent nos étudiants</h2>
+            </div>
+            
+            <div class="temoignages__grid">
+                <div class="temoignage-card" data-aos="fade-up">
+                    <div class="temoignage-card__rating">⭐⭐⭐⭐⭐</div>
+                    <p class="temoignage-card__text">
+                        "Grâce à la formation Création de Contenu, j'ai pu lancer ma chaîne YouTube et atteindre 10K abonnés en 6 mois. Les techniques enseignées sont vraiment efficaces !"
+                    </p>
+                    <div class="temoignage-card__author">
+                        <div class="author__avatar">👨‍💼</div>
+                        <div class="author__info">
+                            <h4 class="author__name">Thomas Martin</h4>
+                            <p class="author__role">YouTubeur</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="temoignage-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="temoignage-card__rating">⭐⭐⭐⭐⭐</div>
+                    <p class="temoignage-card__text">
+                        "La formation Business en Ligne m'a permis de quitter mon emploi et de générer 5000€/mois avec mon activité en ligne. Un investissement qui a changé ma vie !"
+                    </p>
+                    <div class="temoignage-card__author">
+                        <div class="author__avatar">👩‍💼</div>
+                        <div class="author__info">
+                            <h4 class="author__name">Sophie Dubois</h4>
+                            <p class="author__role">Entrepreneure</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="temoignage-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="temoignage-card__rating">⭐⭐⭐⭐⭐</div>
+                    <p class="temoignage-card__text">
+                        "Excellent contenu, très bien structuré et facile à suivre. Le support est réactif et la communauté est vraiment motivante. Je recommande à 100% !"
+                    </p>
+                    <div class="temoignage-card__author">
+                        <div class="author__avatar">👨‍💻</div>
+                        <div class="author__info">
+                            <h4 class="author__name">Marc Lefebvre</h4>
+                            <p class="author__role">Consultant Digital</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============================================ -->
+    <!-- CTA SECTION -->
+    <!-- ============================================ -->
+    <section class="cta section">
+        <div class="container">
+            <div class="cta__content" data-aos="zoom-in">
+                <h2 class="cta__title">Prêt à transformer votre vie ?</h2>
+                <p class="cta__description">
+                    Rejoignez des milliers d'entrepreneurs qui ont déjà franchi le pas. Commencez votre formation dès aujourd'hui et bénéficiez de notre garantie satisfait ou remboursé 30 jours.
+                </p>
+                <div class="cta__buttons">
+                    <a href="#formations" class="btn btn-white btn-large">
+                        Commencer maintenant
+                        <span class="btn-icon">→</span>
+                    </a>
+                    <a href="#contact" class="btn btn-outline btn-large">
+                        Nous contacter
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============================================ -->
+    <!-- CONTACT SECTION -->
+    <!-- ============================================ -->
+    <section class="contact section" id="contact">
+        <div class="container">
+            <div class="section__header">
+                <span class="section__badge">📧 Contact</span>
+                <h2 class="section__title">Une question ? Contactez-nous</h2>
+            </div>
+            
+            <div class="contact__grid">
+                <div class="contact__info" data-aos="fade-right">
+                    <h3 class="contact__info-title">Parlons de votre projet</h3>
+                    <p class="contact__info-description">
+                        Notre équipe est là pour répondre à toutes vos questions et vous aider à choisir la formation qui vous convient.
+                    </p>
+                    
+                    <div class="contact__details">
+                        <div class="contact__detail">
+                            <div class="detail__icon">📧</div>
+                            <div class="detail__content">
+                                <h4 class="detail__title">Email</h4>
+                                <a href="mailto:jeanpaulbognon3@gmail.com" class="detail__link">
+                                    jeanpaulbognon3@gmail.com
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact__detail">
+                            <div class="detail__icon">⏰</div>
+                            <div class="detail__content">
+                                <h4 class="detail__title">Disponibilité</h4>
+                                <p class="detail__text">Lun - Ven : 9h - 18h</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact__detail">
+                            <div class="detail__icon">💬</div>
+                            <div class="detail__content">
+                                <h4 class="detail__title">Réponse</h4>
+                                <p class="detail__text">Sous 24h maximum</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact__form" id="contact-form" data-aos="fade-left">
+                    <div class="form__group">
+                        <label for="name" class="form__label">Nom complet</label>
+                        <input type="text" id="name" name="name" class="form__input" placeholder="Votre nom" required>
+                    </div>
+                    
+                    <div class="form__group">
+                        <label for="email" class="form__label">Email</label>
+                        <input type="email" id="email" name="email" class="form__input" placeholder="votre@email.com" required>
+                    </div>
+                    
+                    <div class="form__group">
+                        <label for="subject" class="form__label">Sujet</label>
+                        <select id="subject" name="subject" class="form__input" required>
+                            <option value="">Choisissez un sujet</option>
+                            <option value="formation">Question sur une formation</option>
+                            <option value="technique">Problème technique</option>
+                            <option value="paiement">Question sur le paiement</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form__group">
+                        <label for="message" class="form__label">Message</label>
+                        <textarea id="message" name="message" class="form__input form__textarea" placeholder="Votre message..." rows="5" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-large btn-block">
+                        Envoyer le message
+                        <span class="btn-icon">→</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============================================ -->
+    <!-- FOOTER -->
+    <!-- ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__col">
+                    <a href="#" class="footer__logo">
+                        <span class="logo-icon">🎓</span>
+                        <span class="logo-text">LIBERTÉ BUSINESS</span>
+                    </a>
+                    <p class="footer__description">
+                        Développez votre business digital avec nos formations complètes et pratiques.
+                    </p>
+                    <div class="footer__social">
+                        <a href="#" class="social__link" aria-label="Facebook">📘</a>
+                        <a href="#" class="social__link" aria-label="Instagram">📷</a>
+                        <a href="#" class="social__link" aria-label="YouTube">📺</a>
+                        <a href="#" class="social__link" aria-label="LinkedIn">💼</a>
+                    </div>
+                </div>
+                
+                <div class="footer__col">
+                    <h4 class="footer__title">Formations</h4>
+                    <ul class="footer__links">
+                        <li><a href="#" class="footer__link">Création de Contenu</a></li>
+                        <li><a href="#" class="footer__link">Business en Ligne</a></li>
+                        <li><a href="#" class="footer__link">Marketing Digital</a></li>
+                        <li><a href="#" class="footer__link">Toutes les formations</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__col">
+                    <h4 class="footer__title">Ressources</h4>
+                    <ul class="footer__links">
+                        <li><a href="#" class="footer__link">Blog</a></li>
+                        <li><a href="#" class="footer__link">Guides gratuits</a></li>
+                        <li><a href="#" class="footer__link">FAQ</a></li>
+                        <li><a href="#" class="footer__link">Support</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__col">
+                    <h4 class="footer__title">Légal</h4>
+                    <ul class="footer__links">
+                        <li><a href="#" class="footer__link">Mentions légales</a></li>
+                        <li><a href="#" class="footer__link">CGV</a></li>
+                        <li><a href="#" class="footer__link">Politique de confidentialité</a></li>
+                        <li><a href="#" class="footer__link">Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    © 2026 LIBERTÉ BUSINESS ACADEMY. Tous droits réservés. Créé avec ❤️ par Jean Paul Bognon
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- ============================================ -->
+    <!-- SCROLL TO TOP BUTTON -->
+    <!-- ============================================ -->
+    <button class="scroll-top" id="scroll-top" aria-label="Retour en haut">
+        ↑
+    </button>
+    
+    <!-- ============================================ -->
+    <!-- SCRIPTS -->
+    <!-- ============================================ -->
+    <script src="produits/js/utils.js"></script>
+    <script src="produits/js/analytics.js"></script>
+    <script src="produits/js/main.js"></script>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+</html>
