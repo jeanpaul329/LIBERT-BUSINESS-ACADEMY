@@ -9,7 +9,7 @@
 // CONFIGURATION
 // ============================================
 const ANALYTICS_CONFIG = {
-    googleAnalyticsId: 'G-XXXXXXXXXX', // ⚠️ REMPLACER
+    googleAnalyticsId: 'G-ENX7R94HMZ', // ⚠️ REMPLACER
     facebookPixelId: 'XXXXXXXXXX',     // ⚠️ REMPLACER
     enabled: true
 };
