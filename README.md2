@@ -1,0 +1,20 @@
+# 🎓 LIBERTÉ BUSINESS ACADEMY
+
+Plateforme e-learning pour formations business digitales
+
+## 📋 Description
+
+Site web complet pour vendre des formations en ligne avec :
+- Interface moderne et responsive
+- Système de paiement intégré (Stripe + PayPal)
+- Tracking analytics (Google Analytics + Facebook Pixel)
+- Panier d'achat avec localStorage
+- Pages de confirmation
+
+## 🚀 Démarrage rapide
+
+### 1. Cloner le projet
+
+```bash
+git clone https://github.com/VOTRE_USERNAME/liberte-business-academy.git
+cd liberte-business-academy
