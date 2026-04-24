@@ -17,16 +17,20 @@ const formations = {
     11: { name: "Marketing Digital", price: 197, currency: "EUR" }
 };
 
-// Configuration des clés API (À REMPLACER PAR VOS VRAIES CLÉS)
+// Configuration des clés API - VOS CLÉS SONT DÉJÀ CONFIGURÉES
 const API_KEYS = {
     fedapay: {
-        public_key: "pk_live_ieeyHcl3_lf-YW1YfoCbaO3w", // 
-        sandbox: true // Mettre false en production
+        public_key: "pk_live_ieeyHcl3_lf-YW1YfoCbaO3w",
+        sandbox: false // Mode PRODUCTION activé
     },
     kkiapay: {
-        public_key: "2ac6f7e0652611efbf02478c5adba4b8", // 
-        sandbox: true // Mettre false en production
-    },
+        public_key: "2ac6f7e0652611efbf02478c5adba4b8",
+        sandbox: false // Mode PRODUCTION activé
+    }
+};
+
+let selectedFormation = null;
+let selectedPaymentMethod = null;
 
 // Ouvrir la modale de paiement
 function openPaymentModal(formationId) {
@@ -108,21 +112,18 @@ document.getElementById('paymentForm').addEventListener('submit', function(e) {
         case 'kkiapay':
             processKkiapayPayment(customerName, customerEmail, customerPhone);
             break;
-        case 'stripe':
-            processStripePayment(customerName, customerEmail, customerPhone);
-            break;
         default:
             alert("Méthode de paiement non supportée");
     }
 });
 
 // ============================================
-// FEDAPAY
+// FEDAPAY - CLÉ CONFIGURÉE
 // ============================================
 function processFedapayPayment(name, email, phone) {
     FedaPay.init({
-        public_key: API_KEYS.fedapay.public_key,
-        sandbox: API_KEYS.fedapay.sandbox
+        public_key: "pk_live_ieeyHcl3_lf-YW1YfoCbaO3w",
+        sandbox: false
     });
 
     FedaPay.transaction.create({
@@ -133,7 +134,7 @@ function processFedapayPayment(name, email, phone) {
         },
         customer: {
             firstname: name.split(' ')[0],
-            lastname: name.split(' ').slice(1).join(' '),
+            lastname: name.split(' ').slice(1).join(' ') || name.split(' ')[0],
             email: email,
             phone_number: {
                 number: phone,
@@ -151,7 +152,7 @@ function processFedapayPayment(name, email, phone) {
 }
 
 // ============================================
-// KKIAPAY
+// KKIAPAY - CLÉ CONFIGURÉE
 // ============================================
 function processKkiapayPayment(name, email, phone) {
     openKkiapayWidget({
@@ -165,8 +166,8 @@ function processKkiapayPayment(name, email, phone) {
             customer_email: email
         }),
         theme: "#667eea",
-        key: API_KEYS.kkiapay.public_key,
-        sandbox: API_KEYS.kkiapay.sandbox
+        key: "2ac6f7e0652611efbf02478c5adba4b8",
+        sandbox: false
     });
 
     addSuccessListener(function(response) {
@@ -185,15 +186,7 @@ document.querySelector('.payment-modal__overlay')?.addEventListener('click', clo
 
 // Modifier les boutons "Découvrir" pour ouvrir la modale
 document.addEventListener('DOMContentLoaded', function() {
-    // Attacher les événements aux boutons de formation
-    const formationCards = document.querySelectorAll('.formation-card');
-    formationCards.forEach((card, index) => {
-        const btn = card.querySelector('.btn-primary');
-        if (btn) {
-            btn.addEventListener('click', function(e) {
-                e.preventDefault();
-                openPaymentModal(index + 1);
-            });
-        }
-    });
+    console.log('✅ Système de paiement chargé avec succès');
+    console.log('🔑 Fedapay: Mode PRODUCTION');
+    console.log('🔑 Kkiapay: Mode PRODUCTION');
 });
