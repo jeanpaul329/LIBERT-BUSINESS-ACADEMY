@@ -752,7 +752,7 @@
             offset: 100
         });
     </script>
-<!-- ============================================ -->
+!-- ============================================ -->
 <!-- MODALE DE PAIEMENT -->
 <!-- ============================================ -->
 <div id="paymentModal" class="payment-modal">
@@ -847,8 +847,9 @@
                                 <span class="payment-method-card__countries">🇧🇯 🇹🇬 🇨🇮 🇸🇳 🇧🇫</span>
                             </div>
                         </button>
+                    </div>
                 </div>
-                </div>
+
                 <input type="hidden" id="selectedPaymentMethod" name="paymentMethod" value="">
                 <input type="hidden" id="selectedFormationId" name="formationId" value="">
                 <input type="hidden" id="selectedFormationPriceValue" name="formationPrice" value="">
@@ -868,8 +869,9 @@
 <!-- Scripts des plateformes de paiement -->
 <script src="https://cdn.fedapay.com/checkout.js?v=1.1.7"></script>
 <script src="https://cdn.kkiapay.me/k.js"></script>
-<script src="https://js.stripe.com/v3/"></script>
-<!-- Script de paiement -->
+
+<!-- Script de paiement avec vos clés configurées -->
 <script src="payment.js"></script>
+
 </body>
 </html>
