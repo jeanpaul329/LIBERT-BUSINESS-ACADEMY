@@ -1285,3 +1285,308 @@ button {
 /* ============================================ */
 /* FIN DU FICHIER CSS PREMIUM */
 /* ============================================ */
+/* ============================================ */
+/* MODALE DE PAIEMENT */
+/* ============================================ */
+.payment-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    animation: fadeIn 0.3s ease;
+}
+
+.payment-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.payment-modal__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+}
+
+.payment-modal__content {
+    position: relative;
+    background: var(--white);
+    border-radius: var(--radius-2xl);
+    max-width: 600px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.4s ease;
+    z-index: 10001;
+}
+
+.payment-modal__close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: var(--gray-100);
+    border: none;
+    border-radius: var(--radius-full);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    z-index: 10002;
+}
+
+.payment-modal__close:hover {
+    background: var(--gray-200);
+    transform: rotate(90deg);
+}
+
+.payment-modal__header {
+    padding: 2.5rem 2rem 1.5rem;
+    text-align: center;
+    border-bottom: 2px solid var(--gray-100);
+}
+
+.payment-modal__title {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-black);
+    color: var(--gray-900);
+    margin-bottom: 0.5rem;
+}
+
+.payment-modal__subtitle {
+    color: var(--gray-600);
+    font-size: var(--font-size-base);
+}
+
+.payment-modal__body {
+    padding: 2rem;
+}
+
+/* Résumé de paiement */
+.payment-summary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: var(--radius-xl);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--white);
+}
+
+.payment-summary__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.payment-summary__item:last-child {
+    margin-bottom: 0;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.payment-summary__label {
+    font-size: var(--font-size-sm);
+    opacity: 0.9;
+}
+
+.payment-summary__value {
+    font-weight: var(--font-bold);
+    font-size: var(--font-size-base);
+}
+
+.payment-summary__price {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-black);
+}
+
+/* Formulaire */
+.payment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: var(--font-semibold);
+    color: var(--gray-700);
+    font-size: var(--font-size-sm);
+}
+
+.form-label svg {
+    color: var(--primary-color);
+}
+
+.form-input {
+    padding: 1rem 1.25rem;
+    border: 2px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    font-size: var(--font-size-base);
+    transition: all var(--transition-base);
+    font-family: inherit;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+}
+
+/* Moyens de paiement */
+.payment-methods {
+    margin-top: 2rem;
+}
+
+.payment-methods__title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-bold);
+    color: var(--gray-900);
+    margin-bottom: 1rem;
+}
+
+.payment-methods__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.payment-method-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem;
+    border: 2px solid var(--gray-200);
+    border-radius: var(--radius-xl);
+    background: var(--white);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    text-align: left;
+}
+
+.payment-method-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.15);
+    transform: translateY(-2px);
+}
+
+.payment-method-card.selected {
+    border-color: var(--primary-color);
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.2);
+}
+
+.payment-method-card__icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gray-50);
+    border-radius: var(--radius-lg);
+    flex-shrink: 0;
+}
+
+.payment-method-card__icon img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.payment-method-card__info {
+    flex: 1;
+}
+
+.payment-method-card__name {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-bold);
+    color: var(--gray-900);
+    margin-bottom: 0.25rem;
+}
+
+.payment-method-card__description {
+    font-size: var(--font-size-sm);
+    color: var(--gray-600);
+    margin-bottom: 0.5rem;
+}
+
+.payment-method-card__countries {
+    font-size: var(--font-size-sm);
+}
+
+.btn-block {
+    width: 100%;
+}
+
+.btn-payment {
+    margin-top: 1rem;
+    padding: 1.25rem 2rem;
+    font-size: var(--font-size-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.btn-payment:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .payment-modal__content {
+        width: 95%;
+        max-height: 95vh;
+    }
+
+    .payment-modal__header {
+        padding: 2rem 1.5rem 1rem;
+    }
+
+    .payment-modal__body {
+        padding: 1.5rem;
+    }
+
+    .payment-modal__title {
+        font-size: var(--font-size-2xl);
+    }
+}
