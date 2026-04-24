@@ -561,17 +561,51 @@ button {
 }
 
 /* ============================================ */
-/* FORMATIONS SECTION - VERSION PREMIUM */
+/* FORMATIONS SECTION - VERSION CORRIGÉE POUR 8+ FORMATIONS */
 /* ============================================ */
 .formations {
     background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
 }
 
+.formations .container {
+    max-width: 1600px;
+    padding: 0 2rem;
+}
+
 .formations__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: var(--spacing-xl);
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
     margin-bottom: var(--spacing-2xl);
+    width: 100%;
+}
+
+/* Pour les très grands écrans - 4 colonnes */
+@media screen and (min-width: 1400px) {
+    .formations__grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Pour les écrans moyens - 3 colonnes */
+@media screen and (min-width: 1024px) and (max-width: 1399px) {
+    .formations__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Pour les tablettes - 2 colonnes */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .formations__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Pour les mobiles - 1 colonne */
+@media screen and (max-width: 767px) {
+    .formations__grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .formation-card {
@@ -583,6 +617,8 @@ button {
     position: relative;
     overflow: hidden;
     border: 1px solid var(--gray-100);
+    width: 100%;
+    max-width: 100%;
 }
 
 .formation-card::before {
