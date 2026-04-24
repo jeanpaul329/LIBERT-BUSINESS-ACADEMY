@@ -20,20 +20,13 @@ const formations = {
 // Configuration des clés API (À REMPLACER PAR VOS VRAIES CLÉS)
 const API_KEYS = {
     fedapay: {
-        public_key: "pk_live_VOTRE_CLE_PUBLIQUE_FEDAPAY", // À remplacer
+        public_key: "pk_live_ieeyHcl3_lf-YW1YfoCbaO3w", // 
         sandbox: true // Mettre false en production
     },
     kkiapay: {
-        public_key: "VOTRE_CLE_PUBLIQUE_KKIAPAY", // À remplacer
+        public_key: "2ac6f7e0652611efbf02478c5adba4b8", // 
         sandbox: true // Mettre false en production
     },
-    stripe: {
-        public_key: "pk_live_VOTRE_CLE_PUBLIQUE_STRIPE" // À remplacer
-    }
-};
-
-let selectedFormation = null;
-let selectedPaymentMethod = null;
 
 // Ouvrir la modale de paiement
 function openPaymentModal(formationId) {
@@ -185,32 +178,6 @@ function processKkiapayPayment(name, email, phone) {
         console.error('Paiement échoué:', error);
         alert('Le paiement a échoué. Veuillez réessayer.');
     });
-}
-
-// ============================================
-// STRIPE
-// ============================================
-function processStripePayment(name, email, phone) {
-    // Note: Stripe nécessite un backend pour créer une session de paiement
-    // Ceci est un exemple simplifié
-    
-    alert('Intégration Stripe en cours...\n\nPour Stripe, vous devez créer un backend qui génère une session de paiement.\n\nConsultez la documentation: https://stripe.com/docs/payments/checkout');
-    
-    // Exemple de redirection vers votre backend
-    // fetch('/create-checkout-session', {
-    //     method: 'POST',
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify({
-    //         formation_id: selectedFormation.id,
-    //         customer_name: name,
-    //         customer_email: email
-    //     })
-    // })
-    // .then(res => res.json())
-    // .then(data => {
-    //     const stripe = Stripe(API_KEYS.stripe.public_key);
-    //     return stripe.redirectToCheckout({ sessionId: data.sessionId });
-    // });
 }
 
 // Fermer la modale en cliquant sur l'overlay
