@@ -752,5 +752,137 @@
             offset: 100
         });
     </script>
+<!-- ============================================ -->
+<!-- MODALE DE PAIEMENT -->
+<!-- ============================================ -->
+<div id="paymentModal" class="payment-modal">
+    <div class="payment-modal__overlay"></div>
+    <div class="payment-modal__content">
+        <button class="payment-modal__close" onclick="closePaymentModal()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+
+        <div class="payment-modal__header">
+            <h2 class="payment-modal__title">🎓 Finaliser votre commande</h2>
+            <p class="payment-modal__subtitle">Choisissez votre moyen de paiement préféré</p>
+        </div>
+
+        <div class="payment-modal__body">
+            <!-- Informations de la formation sélectionnée -->
+            <div class="payment-summary">
+                <div class="payment-summary__item">
+                    <span class="payment-summary__label">Formation :</span>
+                    <span class="payment-summary__value" id="selectedFormationName">-</span>
+                </div>
+                <div class="payment-summary__item">
+                    <span class="payment-summary__label">Prix :</span>
+                    <span class="payment-summary__value payment-summary__price" id="selectedFormationPrice">0€</span>
+                </div>
+            </div>
+
+            <!-- Formulaire d'informations client -->
+            <form id="paymentForm" class="payment-form">
+                <div class="form-group">
+                    <label for="customerName" class="form-label">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        Nom complet
+                    </label>
+                    <input type="text" id="customerName" name="customerName" class="form-input" placeholder="Ex: Jean Paul Bognon" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="customerEmail" class="form-label">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        Email
+                    </label>
+                    <input type="email" id="customerEmail" name="customerEmail" class="form-input" placeholder="Ex: votre@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="customerPhone" class="form-label">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        Téléphone
+                    </label>
+                    <input type="tel" id="customerPhone" name="customerPhone" class="form-input" placeholder="Ex: +229 XX XX XX XX" required>
+                </div>
+
+                <!-- Sélection du moyen de paiement -->
+                <div class="payment-methods">
+                    <h3 class="payment-methods__title">Choisissez votre moyen de paiement</h3>
+                    
+                    <div class="payment-methods__grid">
+                        <!-- Fedapay -->
+                        <button type="button" class="payment-method-card" onclick="selectPaymentMethod('fedapay')">
+                            <div class="payment-method-card__icon">
+                                <img src="https://fedapay.com/assets/images/logo.svg" alt="Fedapay" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                                <span style="display:none; font-size: 2rem;">💳</span>
+                            </div>
+                            <div class="payment-method-card__info">
+                                <h4 class="payment-method-card__name">Fedapay</h4>
+                                <p class="payment-method-card__description">Mobile Money, Cartes bancaires</p>
+                                <span class="payment-method-card__countries">🇧🇯 🇹🇬 🇨🇮 🇸🇳</span>
+                            </div>
+                        </button>
+
+                        <!-- Kkiapay -->
+                        <button type="button" class="payment-method-card" onclick="selectPaymentMethod('kkiapay')">
+                            <div class="payment-method-card__icon">
+                                <img src="https://kkiapay.me/img/logo.png" alt="Kkiapay" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                                <span style="display:none; font-size: 2rem;">📱</span>
+                            </div>
+                            <div class="payment-method-card__info">
+                                <h4 class="payment-method-card__name">Kkiapay</h4>
+                                <p class="payment-method-card__description">Mobile Money, Cartes</p>
+                                <span class="payment-method-card__countries">🇧🇯 🇹🇬 🇨🇮 🇸🇳 🇧🇫</span>
+                            </div>
+                        </button>
+
+                        <!-- Stripe -->
+                        <button type="button" class="payment-method-card" onclick="selectPaymentMethod('stripe')">
+                            <div class="payment-method-card__icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+                                    <path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C5.175 22.99 8.385 24 11.714 24c2.641 0 4.843-.624 6.328-1.813 1.664-1.305 2.525-3.236 2.525-5.732 0-4.128-2.524-5.851-6.594-7.305h.003z" fill="#635BFF"/>
+                                </svg>
+                            </div>
+                            <div class="payment-method-card__info">
+                                <h4 class="payment-method-card__name">Stripe</h4>
+                                <p class="payment-method-card__description">Cartes bancaires internationales</p>
+                                <span class="payment-method-card__countries">🌍 International</span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+
+                <input type="hidden" id="selectedPaymentMethod" name="paymentMethod" value="">
+                <input type="hidden" id="selectedFormationId" name="formationId" value="">
+                <input type="hidden" id="selectedFormationPriceValue" name="formationPrice" value="">
+
+                <button type="submit" class="btn btn-primary btn-block btn-payment" disabled>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                        <line x1="1" y1="10" x2="23" y2="10"></line>
+                    </svg>
+                    Procéder au paiement
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Scripts des plateformes de paiement -->
+<script src="https://cdn.fedapay.com/checkout.js?v=1.1.7"></script>
+<script src="https://cdn.kkiapay.me/k.js"></script>
+<script src="https://js.stripe.com/v3/"></script>
 </body>
 </html>
