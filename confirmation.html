@@ -1,35 +1,229 @@
-<title>Paiement Confirmé - Liberté Business Academy</title>
-    
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paiement Confirmé - Liberté Business Academy</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-        .confirmation-page \{
+        .confirmation-page {
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             padding: 2rem;
-        \}
+        }
 
-        .confirmation-card \{
+        .confirmation-card {
             background: white;
             border-radius: 2rem;
             padding: 3rem;
             max-width: 600px;
             text-align: center;
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-        \}
+            animation: slideUp 0.6s ease;
+        }
 
-        .confirmation-icon \{
+        .confirmation-icon {
             font-size: 5rem;
             margin-bottom: 1.5rem;
             animation: bounce 1s ease infinite;
-        \}
+        }
 
-        @keyframes bounce \{
-            0%, 100% { transform: translateY(0); \}
-            50% \{ transform: translateY(-20px); \}
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .confirmation-title {
             font-size: 2.5rem;
-            font-weight: 900</style>
+            font-weight: 900;
+            color: #1a202c;
+            margin-bottom: 1rem;
+        }
+
+        .confirmation-message {
+            font-size: 1.125rem;
+            color: #4a5568;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .confirmation-details {
+            background: #f7fafc;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .confirmation-details__item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .confirmation-details__item:last-child {
+            border-bottom: none;
+        }
+
+        .confirmation-details__label {
+            font-weight: 600;
+            color: #4a5568;
+        }
+
+        .confirmation-details__value {
+            color: #1a202c;
+            font-weight: 700;
+        }
+
+        .confirmation-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-secondary {
+            background: #e2e8f0;
+            color: #1a202c;
+        }
+
+        .btn-secondary:hover {
+            background: #cbd5e0;
+        }
+
+        .confirmation-note {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: #fff5f5;
+            border-left: 4px solid #f56565;
+            border-radius: 0.5rem;
+            text-align: left;
+            font-size: 0.875rem;
+            color: #742a2a;
+        }
+
+        @media screen and (max-width: 768px) {
+            .confirmation-card {
+                padding: 2rem;
+            }
+
+            .confirmation-title {
+                font-size: 2rem;
+            }
+
+            .confirmation-actions {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="confirmation-page">
+        <div class="confirmation-card">
+            <div class="confirmation-icon">🎉</div>
+            <h1 class="confirmation-title">Paiement Confirmé !</h1>
+            <p class="confirmation-message">
+                Félicitations ! Votre paiement a été traité avec succès. 
+                Vous allez recevoir un email de confirmation avec les détails de votre commande 
+                et les instructions pour accéder à votre formation.
+            </p>
+
+            <div class="confirmation-details">
+                <div class="confirmation-details__item">
+                    <span class="confirmation-details__label">📧 Email de confirmation</span>
+                    <span class="confirmation-details__value">Envoyé</span>
+                </div>
+                <div class="confirmation-details__item">
+                    <span class="confirmation-details__label">🎓 Accès à la formation</span>
+                    <span class="confirmation-details__value">Immédiat</span>
+                </div>
+                <div class="confirmation-details__item">
+                    <span class="confirmation-details__label">💬 Support</span>
+                    <span class="confirmation-details__value">24/7</span>
+                </div>
+                <div class="confirmation-details__item">
+                    <span class="confirmation-details__label">🔄 Garantie</span>
+                    <span class="confirmation-details__value">30 jours</span>
+                </div>
+            </div>
+
+            <div class="confirmation-actions">
+                <a href="index.html" class="btn btn-primary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    Retour à l'accueil
+                </a>
+                <a href="mailto:support@libertebusinessacademy.com" class="btn btn-secondary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    Contacter le support
+                </a>
+            </div>
+
+            <div class="confirmation-note">
+                <strong>📌 Important :</strong> Vérifiez votre boîte de réception (et vos spams) 
+                pour l'email de confirmation contenant vos identifiants d'accès à la plateforme de formation.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Afficher les détails de la transaction si disponibles dans l'URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const transactionId = urlParams.get('transaction_id');
+        
+        if (transactionId) {
+            console.log('Transaction ID:', transactionId);
+            // Vous pouvez envoyer cette info à votre backend pour enregistrer la vente
+        }
+    </script>
+</body>
+</html>
